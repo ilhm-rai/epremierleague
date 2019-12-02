@@ -1,0 +1,265 @@
+body {
+    color: #242424;
+    font-size: 13px;
+    font-family: Poppins, Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+div.nav-wrapper {
+    /* background-image: linear-gradient(135deg, #F97794 10%, #623AA2 100%); */
+    background-color: #38003D;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+div.nav-wrapper a:hover {
+    color: #FF2882;
+}
+
+div.nav-wrapper a.brand-logo {
+    display: flex;
+    align-items: center;
+    line-height: 0px !important;
+    height: 64px;
+}
+
+nav div.nav-wrapper a img {
+    padding: 0 10px;
+    height: 50px;
+}
+
+div.content {
+    padding: 16px;
+}
+
+.content-header {
+    display: flex;
+    align-items: center;
+    line-height: 45px;
+}
+
+.content-title {
+    margin: 0;
+    font-size: 23px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.content-action {
+    display: flex;
+    text-transform: uppercase;
+    align-items: center;
+    margin: 0;
+    color: #242424;
+    font-weight: 400;
+}
+
+a.content-action p {
+    display: inline;
+}
+
+a.content-action p:hover {
+    text-decoration: underline;
+    color: #FF2882;
+}
+
+a.content-action i {
+    font-weight: normal;
+    font-size: medium !important;
+    color: #FF2882;
+    margin-left: 10px;
+}
+
+tr.custom {
+    font-size: 12px;
+    background-color: #FBFBFB;
+    border-bottom: 0;
+}
+
+tr.custom th {
+    color: #6c6c6c;
+    font-weight: 400;
+}
+
+tr.custom th,
+td {
+    padding: 12px 10px;
+}
+
+table.table-standings tr th {
+    height: 45px;
+}
+
+table.table-standings td {
+    height: 56px;
+}
+
+table tr td.team a {
+    display: flex;
+    vertical-align: middle;
+    align-items: center;
+    color: #242424;
+}
+
+table tr td.team a:hover {
+    color: #FF2882;
+    text-decoration: underline;
+}
+
+table tr td.team a img.badge-25 {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    margin-right: 15px;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.badge-35 {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    margin-right: 15px;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.flex-centered {
+    display: inline-flex;
+    align-items: center;
+    vertical-align: middle;
+}
+
+.card .card-header {
+    display: flex;
+    align-items: center;
+    background-color: #38003D;
+    padding: 20px;
+    height: 180px;
+    position: relative;
+}
+
+
+.card .card-header .card-image {
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+    position: unset;
+    width: 110px;
+    height: 110px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.badge-80 {
+    margin: 0 auto;
+    display: inline-block;
+    width: 80px !important;
+    height: 80px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background: url();
+}
+
+.card .card-content .team-name {
+    font-size: 17px;
+    font-weight: bold;
+    line-height: 31px;
+}
+
+.card .card-action {
+    border-top: 0;
+}
+
+.card .card-action a {
+    color: #242424 !important;
+    margin-right: 0 !important;
+}
+
+.card .card-action a:hover {
+    color: #FF2882 !important;
+}
+
+.card .card-action a span {
+    margin-left: 5px;
+    font-size: medium;
+}
+
+.small {
+    font-size: small !important;
+}
+
+.medium {
+    font-size: medium !important;
+}
+
+a.team-name span {
+    display: block;
+}
+
+.hide-me-on-med-and-down {
+    display: table-cell;
+}
+
+div.card-squad.card {
+    height: 300px !important;
+}
+
+div.card-teams.card {
+    height: 350px;
+}
+
+th.align-left {
+    text-align: left !important;
+}
+
+table tr th span.f-title {
+    display: table-cell;
+}
+
+table tr th span.s-title {
+    display: none;
+}
+
+.primary {
+    background-color: #38003D;
+}
+
+.btn:hover {
+    background-color: #242424;
+}
+
+@media (max-width: 993px) {
+    nav div.nav-wrapper a img {
+        padding: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    div.nav-wrapper a.brand-logo {
+        height: 56px;
+    }
+
+    nav div.nav-wrapper a img {
+        height: 50px;
+    }
+
+    a.team-name span {
+        display: none;
+    }
+
+    table tr th span.f-title {
+        display: none;
+    }
+
+    table tr th span.s-title {
+        display: table-cell;
+    }
+
+    table tr td.team a img.badge-25 {
+        margin: 0;
+    }
+
+    .hide-me-on-med-and-down {
+        display: none;
+    }
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="For all the latest Premier League, unofficial website of the Premier League.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="theme-color" content="#38003C">
+    <title>Premier League Football Teams, Favorite Teams &amp; Matches</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,700" rel="stylesheet" type="text/css">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="assets/css/materialize.min.css" media="screen,projection" />
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" sizes="196x196" href="favicon-196.png">
+</head>
+
+<body>
+    <nav role="navigation" class="navbar-fixed">
+        <div class="nav-wrapper">
+            <a href="#home" class="brand-logo left" id="brand-logo"><img alt="Premier League Football"></a>
+            <ul class="topnav right" id="topnav">
+                <li><a class="waves-effect waves-light" href="index.html">Kembali<i
+                            class="material-icons pink-text left">arrow_back</i></a></li>
+            </ul>
+        </div>
+    </nav>
+    <div id="content" class="container white" style="margin-top: 20px;"></div>
+    <script src="assets/js/materialize.min.js"></script>
+    <script src="assets/js/idb.js"></script>
+    <script src="assets/js/database.js"></script>
+    <script src="assets/js/api.js"></script>
+    <script src="assets/js/content.js"></script>
+    <script src="assets/js/register.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            var brand_logo = document.querySelector("a.brand-logo img");
+
+            function setBrandImage() {
+                let window_width = window.innerWidth;
+                if (window_width <= 600) {
+                    brand_logo.setAttribute("src", "assets/img/pl-logo-sprite-mobile-light.png");
+                    // brand_logo.classList.add("circle");
+                } else {
+                    brand_logo.setAttribute("src", "assets/img/pl-logo-sprite-web-light.png");
+                }
+            }
+
+            window.addEventListener("resize", setBrandImage);
+            window.addEventListener("load", setBrandImage);
+            window.addEventListener("maximize", setBrandImage);
+
+            getTeamById();
+        })
+    </script>
+</body>
+
+</html>
