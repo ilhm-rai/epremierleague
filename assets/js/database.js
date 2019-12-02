@@ -14,6 +14,8 @@ const dbPromise = idb.open("premierLeagueDB", 1, (upgradeDB) => {
 });
 
 function saveFavoriteTeam(data) {
+    var crestUrl = data.crestUrl;
+    crestUrl = crestUrl.replace(/^http:\/\//i, 'https://');
     dbPromise.then((db) => {
         const tx = db.transaction(osName, "readwrite");
         const store = tx.objectStore(osName);
@@ -21,7 +23,7 @@ function saveFavoriteTeam(data) {
             id: data.id,
             name: data.name,
             tla: data.tla,
-            crestUrl: data.crestUrl,
+            crestUrl: crestUrl,
             website: data.website,
             address: data.address,
             venue: data.venue,
