@@ -16,7 +16,7 @@ workbox.precaching.precacheAndRoute([
     { url: '/manifest.json', revision: '1' },
     { url: '/pages/home.html', revision: '1' },
     { url: '/pages/favorites.html', revision: '1' },
-    { url: '/pages/teams.html', revision: '1' },
+    { url: '/pages/teams.html', revision: '2' },
     { url: '/assets/css/style.css', revision: '1' },
     { url: '/assets/css/materialize.min.css' },
     { url: '/assets/img/pl-logo-sprite-web-light.png', revision: '1' },
