@@ -7,16 +7,16 @@ if (workbox) {
 }
 
 workbox.precaching.precacheAndRoute([
-    { url: '/', revision: '1' },
-    { url: '/index.html', revision: '1' },
+    { url: '/', revision: '2' },
+    { url: '/index.html', revision: '2' },
     { url: '/nav.html', revision: '1' },
-    { url: '/team.html', revision: '1' },
+    { url: '/team.html', revision: '2' },
     { url: '/404.html', revision: '1' },
     { url: '/favicon-196.png', revision: '1' },
     { url: '/manifest.json', revision: '1' },
     { url: '/pages/home.html', revision: '1' },
     { url: '/pages/favorites.html', revision: '1' },
-    { url: '/pages/teams.html', revision: '2' },
+    { url: '/pages/teams.html', revision: '1' },
     { url: '/assets/css/style.css', revision: '1' },
     { url: '/assets/css/materialize.min.css' },
     { url: '/assets/img/pl-logo-sprite-web-light.png', revision: '1' },
