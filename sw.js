@@ -3,8 +3,8 @@ importScripts('https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox
 if (workbox) {
     console.log('Workbox berhasil dimuat.');
     workbox.precaching.precacheAndRoute([
-        { url: '/', revision: '2' },
-        { url: '/index.html', revision: '2' },
+        { url: '/', revision: '3' },
+        { url: '/index.html', revision: '3' },
         { url: '/nav.html', revision: '1' },
         { url: '/team.html', revision: '2' },
         { url: '/404.html', revision: '1' },
