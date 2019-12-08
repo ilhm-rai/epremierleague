@@ -17,7 +17,7 @@ if (workbox) {
         { url: '/assets/css/materialize.min.css' },
         { url: '/assets/img/pl-logo-sprite-web-light.png', revision: '1' },
         { url: '/assets/img/pl-logo-sprite-mobile-light.png', revision: '1' },
-        { url: '/assets/js/api.js', revision: '1' },
+        { url: '/assets/js/api.js', revision: '2' },
         { url: '/assets/js/content.js', revision: '1' },
         { url: '/assets/js/database.js', revision: '1' },
         { url: '/assets/js/idb.js' },
