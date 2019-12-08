@@ -136,9 +136,8 @@ function getTeamById(id = 0) {
                         setTeamById(data);
                         const btn = document.getElementById("btn-fav");
                         btn.addEventListener("click", (event) => {
-                            saveFavoriteTeam(data).then(() => {
-                                btn.style.visibility = "hidden";
-                            })
+                            saveFavoriteTeam(data);
+                            btn.style.visibility = "hidden";
                         });
                         const osName = "teamFavorites";
                         dbPromise.then((db) => {
