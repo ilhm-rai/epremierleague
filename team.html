@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="theme-color" content="#38003C">
     <title>Premier League Football Teams, Favorite Teams & Matches</title>
-    <link href="https://fonts.googleapis.com/css?family=Poppins:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:400,700&display=swap" rel="stylesheet">
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
@@ -65,25 +65,25 @@
     <script src="assets/js/content.js"></script>
     <script src="assets/js/register.js"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            var brand_logo = document.querySelector("a.brand-logo img");
+        document.addEventListener( "DOMContentLoaded", () => {
+            var brand_logo = document.querySelector( "a.brand-logo img" );
 
             function setBrandImage() {
                 let window_width = window.innerWidth;
-                if (window_width <= 600) {
-                    brand_logo.setAttribute("src", "assets/img/pl-logo-sprite-mobile-light.png");
+                if ( window_width <= 600 ) {
+                    brand_logo.setAttribute( "src", "assets/img/pl-logo-sprite-mobile-light.png" );
                     // brand_logo.classList.add("circle");
                 } else {
-                    brand_logo.setAttribute("src", "assets/img/pl-logo-sprite-web-light.png");
+                    brand_logo.setAttribute( "src", "assets/img/pl-logo-sprite-web-light.png" );
                 }
             }
 
-            window.addEventListener("resize", setBrandImage);
-            window.addEventListener("load", setBrandImage);
-            window.addEventListener("maximize", setBrandImage);
+            window.addEventListener( "resize", setBrandImage );
+            window.addEventListener( "load", setBrandImage );
+            window.addEventListener( "maximize", setBrandImage );
 
             getTeamById();
-        })
+        } )
     </script>
 </body>
 

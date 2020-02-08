@@ -1,9 +1,9 @@
-function setStandings(data) {
+function setStandings( data ) {
     var standingsHTML = " ";
-    data.standings.forEach((standing) => {
-        standing.table.forEach((teams) => {
+    data.standings.forEach( ( standing ) => {
+        standing.table.forEach( ( teams ) => {
             var crestUrl = teams.team.crestUrl;
-            crestUrl = crestUrl.replace(/^http:\/\//i, 'https://');
+            crestUrl = crestUrl.replace( /^http:\/\//i, 'https://' );
             standingsHTML += `
                         <tr>
                             <td>${teams.position}</td>
@@ -18,20 +18,20 @@ function setStandings(data) {
                             <td>${teams.points}</td>
                         </tr>
                         `;
-        });
-    });
+        } );
+    } );
     // Sisipkan komponen table ke dalam elemen dengan id standings
-    document.getElementById("standings").innerHTML = standingsHTML;
+    document.getElementById( "standings" ).innerHTML = standingsHTML;
 }
 
-function setTeams(data) {
+function setTeams( data ) {
     var teamsHTML = "";
-    data.teams.forEach((team) => {
+    data.teams.forEach( ( team ) => {
         var crestUrl = team.crestUrl;
-        crestUrl = crestUrl.replace(/^http:\/\//i, 'https://');
+        crestUrl = crestUrl.replace( /^http:\/\//i, 'https://' );
         teamsHTML += `
         <div class="col s12 m6 l3">
-            <div class="card-teams card">
+            <div class="card card-teams">
                 <div class="card-header">
                     <div class="card-image circle white">
                         <img src="${crestUrl}" class="badge-80"><a class="btn-floating halfway-fab waves-effect waves-light pink btn-fav-index" onclick="getTeamById(${team.id});" id="${team.id}"><i class="material-icons medium">favorite</i></a>
@@ -48,44 +48,53 @@ function setTeams(data) {
             </div>
         </div>
     `;
-    });
+    } );
     // Sisipkan komponen card ke dalam elemen dengan id teams
-    document.getElementById("teams").innerHTML = teamsHTML;
+    document.getElementById( "teams" ).innerHTML = teamsHTML;
 };
 
-function setFavoriteTeams(items) {
+function setFavoriteTeams( items ) {
     var favoriteTeams = "";
     var no = 0;
-    if (items.length > 0) {
-        items.forEach((item) => {
-            no += 1
+    if ( items.length > 0 ) {
+        items.forEach( ( item ) => {
             favoriteTeams += `
-                <tr class="tr-teams">
-                    <td>${no}.</td>
-                    <td class="team"><a href="${item.website}" target="_blank" class="team-name"><img
-                                src="${item.crestUrl}" class="badge-35"><span>${item.name}</span></a></td>
-                    <td class="hide-me-on-med-and-down"><span>${item.address}</span></td>
-                    <td>${item.venue}</td>
-                    <td><button class="btn-small waves-effect waves-light pink" onclick="deleteFavoriteTeam(${item.id})">Hapus</td>
-                </tr>
+                <div class="col s12 m6 l3">
+                    <div class="card card-teams">
+                        <div class="card-header">
+                            <div class="card-image circle white">
+                                <img src="${item.crestUrl}" class="badge-80"><a class="btn-floating halfway-fab waves-effect waves-light pink btn-fav-index" onclick="deleteFavoriteTeam(${item.id});" id="${item.id}"><i class="material-icons">delete</i></a>
+                            </div>
+                        </div>
+                        <div class="card-content center-align">
+                            <p class="team-name">${item.name}</p>
+                            <p class="stadium-name">${item.venue}</p>
+                            <p class="stadium-name">${item.address}</p>
+                    </div>
+                        <div class="card-action center-align">
+                            <a href="./team.html?id=${item.id}" class="flex-centered profile">Selengkapnya<span
+                                    class="material-icons pink-text">arrow_forward</span></a>
+                        </div>
+                    </div>
+                </div>
             `;
-        });
+        } );
     } else {
         favoriteTeams += `
-            <tr>
-                <td colspan="5" class="center-align">Data tim favorit masih kosong. Klik <a href="index.html#teams" onclick="window.location.href='index.html#teams'; window.location.reload(true);"> disini </a>untuk melihat daftar tim.</td>
-            </tr>
+                <div class="col s12 center">
+                    <p>Data tim favorit masih kosong. Klik <a href="index.html#teams" onclick="window.location.href='index.html#teams'; window.location.reload(true);"> disini </a>untuk melihat daftar tim.</p>
+                </div>
         `;
     }
-    document.getElementById("favorites").innerHTML = favoriteTeams;
+    document.getElementById( "favorites" ).innerHTML = favoriteTeams;
 };
 
-function setTeamById(data) {
+function setTeamById( data ) {
     var teamHTML = "";
     var crestUrl = data.crestUrl;
-    crestUrl = crestUrl.replace(/^http:\/\//i, 'https://');
+    crestUrl = crestUrl.replace( /^http:\/\//i, 'https://' );
     var website = data.website;
-    website = website.replace(/^http:\/\//i, '');
+    website = website.replace( /^http:\/\//i, '' );
     teamHTML += `
     <div class="row">
         <div class="content-header">
@@ -94,7 +103,7 @@ function setTeamById(data) {
             </div>
             <div class="col s4">
                 <a href="" class="right content-action btn white-text primary">
-                    <p>Bagikan</p><i class="material-icons" class="right">share</i>
+                    Bagikan
                 </a>
             </div>
         </div>
@@ -118,8 +127,8 @@ function setTeamById(data) {
         </div>
     </div>
     `;
-    data.squad.forEach((coach) => {
-        if (coach.role == "COACH") {
+    data.squad.forEach( ( coach ) => {
+        if ( coach.role == "COACH" ) {
             teamHTML += `
             <div class="row">
                 <div class="content-header">
@@ -129,7 +138,7 @@ function setTeamById(data) {
                 </div>
             </div>
             <div class="row">
-                <div class="col s12 m6 l4">
+                <div class="col s12">
                     <div class="card">
                         <div class="card-content">
                             <ul class="collection with-header">
@@ -142,21 +151,21 @@ function setTeamById(data) {
             </div>
             `;
         }
-    });
+    } );
     teamHTML += `
     <div class="row">
         <div class="content-header">
             <div class="col s12">
-                <p class="content-title">Squad</p>
+                <p class="content-title">Pemain</p>
             </div>
         </div>
     </div>
     <div class="row">
     `;
-    data.squad.forEach((player) => {
+    data.squad.forEach( ( player ) => {
         var shirtNumber = player.shirtNumber;
-        if (shirtNumber == null) shirtNumber = "-";
-        if (player.role != "COACH") {
+        if ( shirtNumber == null ) shirtNumber = "-";
+        if ( player.role != "COACH" ) {
             teamHTML += `
             <div class="col s12 m6 l4">
                 <div class="card-squad card">
@@ -172,7 +181,7 @@ function setTeamById(data) {
             </div>
             `;
         }
-    });
+    } );
     teamHTML += `</div>`;
-    document.getElementById("content").innerHTML = teamHTML;
+    document.getElementById( "content" ).innerHTML = teamHTML;
 }

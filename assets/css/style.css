@@ -1,7 +1,8 @@
 body {
-    color: #242424;
-    font-size: 13px;
-    font-family: Poppins, Arial, "Helvetica Neue", Helvetica, sans-serif;
+    color: black;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: 'Quicksand', sans-serif;
 }
 
 div.nav-wrapper {
@@ -9,6 +10,10 @@ div.nav-wrapper {
     background-color: #38003D;
     font-weight: 500;
     font-size: 15px;
+}
+
+footer.page-footer{
+    background-color: #38003D;
 }
 
 div.nav-wrapper a:hover {
@@ -39,8 +44,8 @@ div.content {
 
 .content-title {
     margin: 0;
-    font-size: 23px;
     font-weight: bold;
+    font-size: 23px;
     text-transform: uppercase;
 }
 
@@ -70,7 +75,7 @@ a.content-action i {
 }
 
 tr.custom {
-    font-size: 12px;
+    font-size: 13px;
     background-color: #FBFBFB;
     border-bottom: 0;
 }
@@ -136,6 +141,7 @@ table tr td.team a img.badge-25 {
     padding: 20px;
     height: 180px;
     position: relative;
+    border-radius: 5px 5px 0 0;
 }
 
 
@@ -168,10 +174,12 @@ table tr td.team a img.badge-25 {
 
 .card .card-action {
     border-top: 0;
+    border-radius: 0 0 5px 5px !important;
 }
 
 .card .card-action a {
-    color: #242424 !important;
+    color: black !important;
+    font-weight: bold;
     margin-right: 0 !important;
 }
 
@@ -204,8 +212,14 @@ div.card-squad.card {
     height: 300px !important;
 }
 
-div.card-teams.card {
+.collection li.collection-item{
+    padding: 10px 20px !important;
+}
+
+div.card.card-teams {
     height: 350px;
+    border-radius: 5px;
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.3);
 }
 
 th.align-left {
